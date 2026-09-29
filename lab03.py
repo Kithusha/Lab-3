@@ -1,0 +1,63 @@
+# Fill in the body of each function below (look for the TODO comments).
+#
+# The function names and their arguments are already written for you - do NOT
+# rename them or change their arguments, because the automated tests call them by
+# name. Replace each `pass` with your code, and use `return` to send the answer
+# back (not `print`).
+
+
+def pig_latin(word):
+    # TODO (Part 1): return the Pig Latin form of a single lowercase word.
+    #   If it starts with a vowel (a, e, i, o, u): add "way" to the end.
+    #   Otherwise: move the first letter to the end and add "ay".
+    if word in 'aeiou':
+        return(word.lower()+'way')
+    else:
+        return (word.lower()[1:]+word.lower()[0]+'ay')
+
+
+def word_lengths(sentence):
+    # TODO (Part 2): return a list with the length of each word in `sentence`
+    #   (words are separated by spaces).
+    part:list[str]=sentence.split()
+    totalLength:list[int]=[]
+    for i in part:
+        partLength=len(i)
+        totalLength.append(partLength)
+       
+    return totalLength
+
+
+
+def reverse_words(sentence):
+    # TODO (Part 3): return `sentence` with the order of its words reversed.
+    #   e.g. "hello world" -> "world hello"
+    word:list[str]=sentence.split()
+    word2:list[str]= (word[::-1])
+    
+    return word2
+
+
+def letter_counts(text:list[str]):
+    # TODO (Part 4 - STRETCH, optional): return a dictionary mapping each letter
+    #   to how many times it appears in `text`. Ignore case, and ignore anything
+    #   that isn't a letter.
+    pass
+    #letters:str={}
+    #for char in text:
+       # if 
+        
+
+
+def main():
+    # Optional scratch space - use this to try your functions with sample values.
+    print(pig_latin("banana"))                    # ananabay
+    print(word_lengths("the quick brown fox"))    # [3, 5, 5, 3]
+    print(reverse_words("the quick brown fox"))   # fox brown quick the
+    # print(letter_counts("hello"))                 # {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+    pass
+
+
+
+if __name__ == "__main__":
+    main()
